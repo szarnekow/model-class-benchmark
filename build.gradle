@@ -6,6 +6,9 @@ buildscript {
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:latest.release'
     }
 }
+plugins {
+   id 'me.champeau.gradle.jmh' version '0.2.0'
+}
 
 apply plugin: 'groovy'
 apply plugin: 'scala'
@@ -19,6 +22,10 @@ repositories {
     jcenter()
 }
 
+jmh {
+    jmhVersion = '1.7+'
+}
+
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.3:indy'
     compile 'org.projectlombok:lombok:latest.release'
@@ -28,6 +35,7 @@ dependencies {
 
     compile 'org.jetbrains.kotlin:kotlin-stdlib:latest.release'
 
-    testCompile 'org.openjdk.jmh:jmh-core:latest.release'
-    testCompile 'org.openjdk.jmh:jmh-generator-annprocess:latest.release'
+    jmh 'commons-io:commons-io:2.4'
 }
+
+assemble.dependsOn(jmhJar)

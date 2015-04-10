@@ -10,8 +10,7 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 public class ToStringBenchmark {
-    @Benchmark
-    public String toStringGroovy(GroovyState state) {
+    @Benchmark public String toStringGroovy(GroovyState state) {
         return state.m.toString();
     }
     @Benchmark public String toStringLombok(LombokState state) {
