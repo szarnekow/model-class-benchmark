@@ -22,4 +22,7 @@ public class ToStringBenchmark {
     @Benchmark public String toStringKotlin(KotlinState state) {
         return state.m.toString();
     }
+    @Benchmark public String toStringXtend(XtendState state) {
+        return state.m.toString();
+    }
 }

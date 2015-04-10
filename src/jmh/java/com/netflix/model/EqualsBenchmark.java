@@ -22,4 +22,7 @@ public class EqualsBenchmark {
     @Benchmark public boolean equalsKotlin(KotlinState state) {
         return state.m.equals(state.m2);
     }
+    @Benchmark public boolean equalsXtend(XtendState state) {
+        return state.m.equals(state.m2);
+    }
 }

@@ -8,6 +8,7 @@ buildscript {
 }
 plugins {
    id 'me.champeau.gradle.jmh' version '0.2.0'
+   id 'org.xtend.xtend' version '0.4.6'
 }
 
 apply plugin: 'groovy'
@@ -35,7 +36,11 @@ dependencies {
 
     compile 'org.jetbrains.kotlin:kotlin-stdlib:latest.release'
 
+    compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.8.1'
+
     jmh 'commons-io:commons-io:2.4'
 }
 
 assemble.dependsOn(jmhJar)
+
+sourceSets.main.java.srcDir('src/main/xtend')

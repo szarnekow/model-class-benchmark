@@ -22,4 +22,7 @@ public class HashCodeBenchmark {
     @Benchmark public int hashCodeKotlin(KotlinState state) {
         return state.m.hashCode() + state.m2.hashCode();
     }
+    @Benchmark public int hashCodeXtend(XtendState state) {
+        return state.m.hashCode() + state.m2.hashCode();
+    }
 }
